@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Javascript Handson-10  <span>(Map & Sets)</span></h1>
+            <h2>Q1.<pre>
+                "Problem:
+                You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+                Your task is to remove all the duplicate occurrences of characters in the string.
+
+                Input:
+                abcadeecfb
+
+                Output:
+                abcdef"
+            </pre></h2>
+            <h2><pre>Ans.
+                let ok='abcadeecfb'
+                let unique = new Set();
+                for(let i=0;i< ok.length;i++){
+                unique.add(ok[i])
+                }
+                let str='';
+                for(let data of unique){
+                str+=data;
+                }
+                console.log(str)
+            </pre></h2>
+            <h2>Q2. <pre>
+                "Problem:
+                You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+
+                Input:
+                abcadeecfb
+
+                Output:
+                a=2
+                b=2
+                c=2
+                d=1
+                e=2
+                f=1"
+            </pre></h2>
+            <h2><pre>Ans.   Method :- 1
+                let ok='abcdabcdabbc'
+                let unique = new Map();
+                for(let i=0;i< ok.length;i++){
+                count=0;
+                for(let j=0;j< ok.length;j++){
+                    if(ok[i]==ok[j]){
+                    count++;
+                    }
+                }
+                unique.set(ok[i],count)
+                }
+                console.log(unique)
+
+
+
+                method :- 2
+
+                let ok='abcdabcdabbc'
+                let unique = new Map();
+                for(let i=0;i< ok.length;i++){
+                if(unique.has(ok[i])){
+                    let value=unique.get(ok[i]);
+                    unique.set(ok[i],value+1)
+                }else{
+                    unique.set(ok[i],1)
+                }
+                }
+                console.log(unique)
+            </pre></h2>
+    </div>
+</body>
+</html>
